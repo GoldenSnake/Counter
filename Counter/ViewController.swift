@@ -7,6 +7,14 @@
 
 import UIKit
 
+extension Date {
+    var dateInFormat: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy, HH:mm:ss"
+        return dateFormatter.string(from: self)
+    }
+}
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var countValue: UILabel!
@@ -16,10 +24,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var buttonReset: UIButton!
     @IBOutlet weak var buttonPlus: UIButton!
     
+    private func roundCornerButtons(){
+        buttonMinus.layer.cornerRadius = 15
+        buttonPlus.layer.cornerRadius = 15
+        buttonReset.layer.cornerRadius = 15
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         countValue.text = "Значение счётчика: 0"
         changeHistory.text = "История изменений: " + "\n"
+        roundCornerButtons()
     }
     
     private var count: Int = 0
@@ -27,23 +42,23 @@ class ViewController: UIViewController {
     @IBAction func buttonTouchPlus() {
         count += 1
         countValue.text = "Значение счётчика: \(count)"
-        changeHistory.text.append("Значение изменено на +1." + "\n")
+        changeHistory.text.append("[\(Date().dateInFormat)]: значение изменено на +1." + "\n")
     }
     
     @IBAction func buttonTouchMinus() {
         if count > 0 {
             count -= 1
             countValue.text = "Значение счётчика: \(count)"
-            changeHistory.text.append("Значение изменено на -1." + "\n")
+            changeHistory.text.append("[\(Date().dateInFormat)]: значение изменено на -1." + "\n")
         } else {
-            changeHistory.text.append("Попытка уменьшить значение счетчика ниже 0." + "\n")
+            changeHistory.text.append("[\(Date().dateInFormat)]: попытка уменьшить значение счетчика ниже 0." + "\n")
         }
     }
     
     @IBAction func buttonTouchReset() {
         count = 0
         countValue.text = "Значение счётчика: \(count)"
-        changeHistory.text.append("Значение сброшено." + "\n")
+        changeHistory.text.append("[\(Date().dateInFormat)]: значение сброшено." + "\n")
     }
     
 }
