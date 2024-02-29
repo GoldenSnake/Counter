@@ -31,7 +31,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="arrow.uturn.backward.square.fill" catalog="system"/>
                                 <connections>
-                                    <action selector="buttonTouchReset" destination="BYZ-38-t0r" eventType="touchUpInside" id="LmD-ji-gt4"/>
+                                    <action selector="buttonTouchReset" destination="BYZ-38-t0r" eventType="touchUpInside" id="erO-xl-s4x"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFg-Ej-vKi" userLabel="ButtonMinus">
@@ -42,7 +42,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="minus.square.fill" catalog="system"/>
                                 <connections>
-                                    <action selector="buttonTouchMinus" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zga-hX-RdC"/>
+                                    <action selector="buttonTouchMinus" destination="BYZ-38-t0r" eventType="touchUpInside" id="uWn-ZL-jzU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Zh-qt-BMJ" userLabel="ButtonMinus">
@@ -53,7 +53,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="plus.square.fill" catalog="system"/>
                                 <connections>
-                                    <action selector="buttonTouchPlus" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z2m-21-NxQ"/>
+                                    <action selector="buttonTouchPlus" destination="BYZ-38-t0r" eventType="touchUpInside" id="rgb-xN-QoP"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="История изменений:" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1p-BM-CJT">
@@ -69,11 +69,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="buttonMinus" destination="MFg-Ej-vKi" id="7p9-c1-G66"/>
-                        <outlet property="buttonPlus" destination="8Zh-qt-BMJ" id="uCD-Bs-K13"/>
-                        <outlet property="buttonReset" destination="KJw-SF-zXF" id="9HT-v1-w7E"/>
-                        <outlet property="changeHistory" destination="h1p-BM-CJT" id="52T-Fk-E1e"/>
-                        <outlet property="countValue" destination="Yic-G7-114" id="Juy-EQ-hca"/>
+                        <outlet property="countLabel" destination="Yic-G7-114" id="IA7-rb-GO0"/>
+                        <outlet property="historyTextView" destination="h1p-BM-CJT" id="qkb-hZ-eXJ"/>
+                        <outlet property="minusButton" destination="MFg-Ej-vKi" id="VlV-A0-as4"/>
+                        <outlet property="plusButton" destination="8Zh-qt-BMJ" id="jQf-xS-rp1"/>
+                        <outlet property="resetButton" destination="KJw-SF-zXF" id="S0G-5x-i2a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
