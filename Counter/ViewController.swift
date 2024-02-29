@@ -16,14 +16,16 @@ extension Date {
 }
 
 class ViewController: UIViewController {
-    
-    
+    // MARK: - IBOutlet
     @IBOutlet weak private var countLabel: UILabel!
     @IBOutlet weak private var historyTextView: UITextView!
     
     @IBOutlet weak private var minusButton: UIButton!
     @IBOutlet weak private var plusButton: UIButton!
     @IBOutlet weak private var resetButton: UIButton!
+    
+    private var count: Int = 0
+    
     
     private func roundCornerButtons(){
         minusButton.layer.cornerRadius = 15
@@ -38,8 +40,7 @@ class ViewController: UIViewController {
         roundCornerButtons()
     }
     
-    private var count: Int = 0
-    
+// MARK: - IBAction
     @IBAction private func buttonTouchPlus() {
         count += 1
         countLabel.text = "Значение счётчика: \(count)"
