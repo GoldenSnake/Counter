@@ -18,12 +18,12 @@ extension Date {
 class ViewController: UIViewController {
     
     
-    @IBOutlet weak var countLabel: UILabel!
-    @IBOutlet weak var historyTextView: UITextView!
+    @IBOutlet weak private var countLabel: UILabel!
+    @IBOutlet weak private var historyTextView: UITextView!
     
-    @IBOutlet weak var minusButton: UIButton!
-    @IBOutlet weak var plusButton: UIButton!
-    @IBOutlet weak var resetButton: UIButton!
+    @IBOutlet weak private var minusButton: UIButton!
+    @IBOutlet weak private var plusButton: UIButton!
+    @IBOutlet weak private var resetButton: UIButton!
     
     private func roundCornerButtons(){
         minusButton.layer.cornerRadius = 15
@@ -40,13 +40,13 @@ class ViewController: UIViewController {
     
     private var count: Int = 0
     
-    @IBAction func buttonTouchPlus() {
+    @IBAction private func buttonTouchPlus() {
         count += 1
         countLabel.text = "Значение счётчика: \(count)"
         historyTextView.text.append("[\(Date().dateInFormat)]: значение изменено на +1." + "\n")
     }
     
-    @IBAction func buttonTouchMinus() {
+    @IBAction private func buttonTouchMinus() {
         if count > 0 {
             count -= 1
             countLabel.text = "Значение счётчика: \(count)"
@@ -56,7 +56,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func buttonTouchReset() {
+    @IBAction private func buttonTouchReset() {
         count = 0
         countLabel.text = "Значение счётчика: \(count)"
         historyTextView.text.append("[\(Date().dateInFormat)]: значение сброшено." + "\n")
